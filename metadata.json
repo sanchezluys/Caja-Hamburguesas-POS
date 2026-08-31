@@ -1,0 +1,6 @@
+{
+  "name": "Caja Rápida",
+  "description": "Caja registradora y calculadora para venta de comida rápida (perros calientes, hamburguesas, bebidas) con gestión de pedidos e impresión de recibos.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
