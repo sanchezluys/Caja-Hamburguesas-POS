@@ -1,21 +1,29 @@
 # Add project specific ProGuard rules here.
 # You can control the set of applied configuration files using the
 # proguardFiles setting in build.gradle.
-#
-# For more details, see
-#   http://developer.android.com/guide/developing/tools/proguard.html
 
-# If your project uses WebView with JS, uncomment the following
-# and specify the fully qualified class name to the JavaScript interface
-# class:
-#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
-#   public *;
-#}
+# Preserve line numbers and attributes for de-obfuscation and crash reporting on Google Play Console
+-keepattributes SourceFile,LineNumberTable
+-renamesourcefileattribute SourceFile
+-keepattributes *Annotation*,Signature,InnerClasses,EnclosingMethod
 
-# Uncomment this to preserve the line number information for
-# debugging stack traces.
-#-keepattributes SourceFile,LineNumberTable
+# Keep app data entities and JSON models so Room and Moshi serialization function seamlessly
+-keep class com.example.data.model.** { *; }
+-keep class com.example.data.db.** { *; }
 
-# If you keep the line number information, uncomment this to
-# hide the original source file name.
-#-renamesourcefileattribute SourceFile
+# Moshi specific rules
+-keepclasseswithmembers class * {
+    @com.squareup.moshi.JsonClass <init>(...);
+}
+-keep class * extends com.squareup.moshi.JsonAdapter {
+    public <init>(...);
+}
+-dontwarn com.squareup.moshi.**
+
+# Room Database rules
+-keep class * extends androidx.room.RoomDatabase
+-dontwarn androidx.room.paging.**
+
+# Coroutines and standard libraries
+-dontwarn kotlinx.coroutines.**
+
