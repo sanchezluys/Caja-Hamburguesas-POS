@@ -32,7 +32,7 @@ abstract class AppDatabase : RoomDatabase() {
                     "caja_rapida_pos.db"
                 )
                     .addCallback(AppDatabaseCallback(scope))
-                    .fallbackToDestructiveMigration()
+                    .fallbackToDestructiveMigration(dropAllTables = true)
                     .build()
                 INSTANCE = instance
                 instance

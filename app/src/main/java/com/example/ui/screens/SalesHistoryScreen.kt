@@ -30,8 +30,8 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.Divider
 import androidx.compose.material3.ElevatedCard
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -177,7 +177,7 @@ fun SalesHistoryScreen(
                     }
 
                     Spacer(modifier = Modifier.height(12.dp))
-                    Divider()
+                    HorizontalDivider()
                     Spacer(modifier = Modifier.height(10.dp))
 
                     // Breakdown by Payment Method
@@ -364,7 +364,7 @@ fun SalesHistoryScreen(
                         )
 
                         Spacer(modifier = Modifier.height(8.dp))
-                        Divider()
+                        HorizontalDivider()
                         Spacer(modifier = Modifier.height(4.dp))
 
                         // Action Buttons: Print, Share, Delete

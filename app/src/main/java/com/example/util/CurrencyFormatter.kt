@@ -64,7 +64,7 @@ object CurrencyFormatter {
     }
 
     fun formatDateShort(timestamp: Long): String {
-        val sdf = SimpleDateFormat("dd MMM, hh:mm a", Locale("es", "ES"))
+        val sdf = SimpleDateFormat("dd MMM, hh:mm a", Locale.forLanguageTag("es-ES"))
         return sdf.format(Date(timestamp))
     }
 
